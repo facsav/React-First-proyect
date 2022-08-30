@@ -41,10 +41,10 @@ export function ItemCount (props){
     return(
     <div>
         <p> Productos seleccionados {contador} </p>
-        <button onClick={sumaNum}> + </button>
-        <button onClick={restaNum}> - </button>
+        <button className="btn btn-primary" onClick={sumaNum}>+</button>
+        <button className="btn btn-primary" onClick={restaNum}>-</button>
         <hr></hr>
-        <button onClick={agregarProd}  > agragar al carrito </button>
+        <button className="btn btn-primary" onClick={agregarProd}  > Agragar al carrito </button>
     </div>
     )
 }
