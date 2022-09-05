@@ -5,6 +5,8 @@ const arrayItems = [
         id: 1 ,
         titulo: 'Proteina',
         descripcion: '2 kg de proteina BSN',
+        descLarga:'La mejor proteina importada de USA. Contiene proteinas de varios tipos y de facil absorción',
+        precio:'25.000$',
         foto: imagenes.proteinBSN,
         stock:6     
     },
@@ -68,7 +70,7 @@ const arrayItems = [
         id: 10 ,
         titulo: 'Pre Work',
         descripcion: '600 gramos de Pre entreno StarNutricion',
-        foto: imagenes.creatinaStar,
+        foto: imagenes.preworkStar,
         stock:5     
     },
     

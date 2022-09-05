@@ -1,9 +1,12 @@
+import { ItemList } from "../ItemsList/ItemList"
+
 export function ItemListContainer (props){
-    const {nombre, apellido, mensaje} = props
+
     return(
-        <div>
-            <h1> {mensaje} </h1>
-            <p>Mi nombre es {nombre} y mi apellido {apellido}</p>
+        <div className="container">
+            <div className="row justify-content-center col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-6" >
+                <ItemList></ItemList>
+            </div>
         </div>
 
     )  
