@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Cart } from "../Cart/Cart";
 
 
@@ -15,29 +16,30 @@ const Navbar = () => {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" id="estiloNav" href="../index.html">Inicio <span class="sr-only"></span></a>
+                         <Link className="nav-link" id="estiloNav" to='/'>Inicio</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="estiloNav" href="../html/servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="estiloNav" href="../html/catalogo.html">Catalogo</a>
-                    </li>
+                    
+                    {/* <li class="nav-item">
+                         <Link className="nav-link" id="estiloNav" to='/detail'>Detalle</Link>
+                    </li> */}
 
                         
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nosotros
+                        Catalogo
                         </a>
                     <div class="dropdown-menu" aria-labelledby="navb
                     
                     arDropdownMenuLink">
-                        <a class="dropdown-item" href="../html/historia.html">Historia</a>
-                        <a class="dropdown-item" href="../html/filosofia.html">Filosofia</a>
-                        <a class="dropdown-item" href="../html/contacto.html">Contacto</a>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo'>Ver Productos</Link>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo/proteina'>Ver proteinas</Link>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo/creatina'>Ver creatinas</Link>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo/gainer'>Ver gainers</Link>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo/pre'>Ver pre entrenos</Link>
+                        <Link className="nav-link" id="estiloNav" to='/catalogo/otros'>Ver otros</Link>
                     </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <Cart></Cart>
                     </li>
                 </ul>

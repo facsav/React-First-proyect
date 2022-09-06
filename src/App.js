@@ -7,15 +7,25 @@ import { Items } from './components/Items/Items';
 import imagenes from './assets/imagenes';
 import { ItemList } from './components/ItemsList/ItemList';
 import { ItemDetail } from './components/ItemDetail/ItemDetail';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Main } from './components/Main/Main';
 
 
 function App() {
   return (
-    <>
-    <Navbar></Navbar>
-    <ItemListContainer></ItemListContainer>
-    <ItemDetail></ItemDetail>
-    </>
+    <BrowserRouter>
+    
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Main/>} ></Route>
+        <Route path='/catalogo' element={<ItemListContainer/>} ></Route>
+        <Route path='/catalogo/:tipo' element={<ItemListContainer/>} ></Route>
+        <Route path='/detail' element={<ItemDetail/>}/>
+      </Routes>
+
+      
+    </BrowserRouter>
+  
   );
 }
 

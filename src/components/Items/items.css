@@ -1,3 +1,5 @@
 .card{
     width: 18rem;
+    margin: .3rem;
+    text-decoration-skip: none;
 }
