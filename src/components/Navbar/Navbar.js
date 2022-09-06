@@ -19,9 +19,9 @@ const Navbar = () => {
                          <Link className="nav-link" id="estiloNav" to='/'>Inicio</Link>
                     </li>
                     
-                    {/* <li class="nav-item">
+                    <li class="nav-item">
                          <Link className="nav-link" id="estiloNav" to='/detail'>Detalle</Link>
-                    </li> */}
+                    </li>
 
                         
                     <li class="nav-item dropdown">

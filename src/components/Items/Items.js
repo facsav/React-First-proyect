@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export function Items ({infoTarjeta}){
     return(
         <div class="card" >
-            <Link style={{textDecoration:"none" , color:"black"}} to='/detail' >
+            <Link style={{textDecoration:"none" , color:"black"}} to={`/items/${infoTarjeta.id}`} >
                 
                 <img  class="card-img-top" src={infoTarjeta.foto} alt={infoTarjeta.id}></img>
                 <div class="card-body">

@@ -4,16 +4,8 @@ import {obtenerLista} from '../../helper/helper'
 import { useParams } from "react-router-dom"
 
 export function ItemList () {
-
-
-
-
+    
     const {tipo} = useParams()
-
-
-
-
-
 
     const [data, setData] = useState([])
 

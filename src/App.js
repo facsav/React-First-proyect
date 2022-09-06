@@ -9,6 +9,7 @@ import { ItemList } from './components/ItemsList/ItemList';
 import { ItemDetail } from './components/ItemDetail/ItemDetail';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Main } from './components/Main/Main';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Route path='/' element={<Main/>} ></Route>
         <Route path='/catalogo' element={<ItemListContainer/>} ></Route>
         <Route path='/catalogo/:tipo' element={<ItemListContainer/>} ></Route>
-        <Route path='/detail' element={<ItemDetail/>}/>
+        <Route path='/items/:id' element={<ItemDetailContainer/>} ></Route>
+        <Route path='/detail' element={<ItemDetailContainer/>}/>
       </Routes>
 
       
