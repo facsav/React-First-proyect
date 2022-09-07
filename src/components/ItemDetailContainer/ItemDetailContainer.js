@@ -3,65 +3,38 @@ import { useEffect, useState } from "react"
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import { getRoles } from "@testing-library/react"
+import { arrayItems } from "../../helper/helper"
 
 
 export function ItemDetailContainer (){
     
-    const {id} = useParams
 
-    const [item, setItem] = useState([])
+    const {id} = useParams();
+    console.log("productId", id);
+
+    const [item, setItem] = useState({});
 
     const getItem = (id)=>{
-        return new Promise ((resolve, reject)=>{
-            const idLista = item.filter( item=> item.id === parseInt(id))
-            resolve (idLista)
+        return new Promise((resolve, reject)=>{
+            const product = arrayItems.find(item=>item.id === parseInt(id));
+            resolve(product)
         })
     }
 
     useEffect(()=>{
-        const getProducto = async ()=>{
+        const getProducto = async()=>{
             const producto = await getItem(id);
-            console.log('productoooooo', producto)
-            setItem(producto)
+            console.log('producto', producto)
+            setItem(producto);
         }
-        getProducto()
+        getProducto();
     },[id])
 
-    console.log(item, 'iteeeeem')
-
-    // useEffect(()=>{
-    //     obtenerLista().then(data => {
-    //         setData(data)
-    //         if(!data){
-    //             setData(data)
-    //         }
-    //         else{
-    //             const idLista = data.filter( item=> item.id === parseInt({id}))
-    //             setData(idLista)
-    //         }
-    //     })
-    // },[])
-
-
-    // const [data, setData] = useState([])
-    // useEffect(()=>{
-    //     obtenerLista()
-    //     .then(response =>{
-    //         setData(response.find(prod => prod.id === idd))
-    //     })
-    // }, [])
+    console.log('item:', item)
 
     return(
-        <>
-            {/* {data( data=>(
-                <ItemDetail infoDetalle={data} ></ItemDetail>
-            ))} */}
-                
 
-                <ItemDetail infoDetalle={item} ></ItemDetail>
+        <ItemDetail infoDetalle={item}/>
 
-
-        </>
     )
-
 }
