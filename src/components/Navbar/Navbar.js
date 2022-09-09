@@ -6,22 +6,23 @@ import { Cart } from "../Cart/Cart";
 const Navbar = () => {
     return(
         <nav className="navbar navbar-expand-md navbar-light bg-light ">
-            <image class="navbar-brand">
-                <h1> Mi Tienda
-                     </h1>
-            </image>
+            <Link style={{height:'3.5rem'}} className="nav-link" to='/'>
+                <image class="navbar-brand">
+                    <h1> Mi Tienda</h1>
+                </image>
+            </Link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    {/* <li class="nav-item active">
                          <Link className="nav-link" id="estiloNav" to='/'>Inicio</Link>
-                    </li>
+                    </li> */}
                     
-                    <li class="nav-item">
+                    {/* <li class="nav-item">
                          <Link className="nav-link" id="estiloNav" to='/detail'>Detalle</Link>
-                    </li>
+                    </li> */}
 
                         
                     <li class="nav-item dropdown">

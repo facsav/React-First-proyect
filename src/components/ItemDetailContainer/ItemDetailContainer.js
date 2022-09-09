@@ -10,7 +10,7 @@ export function ItemDetailContainer (){
     
 
     const {id} = useParams();
-    console.log("productId", id);
+
 
     const [item, setItem] = useState({});
 
@@ -24,13 +24,13 @@ export function ItemDetailContainer (){
     useEffect(()=>{
         const getProducto = async()=>{
             const producto = await getItem(id);
-            console.log('producto', producto)
+
             setItem(producto);
         }
         getProducto();
     },[id])
 
-    console.log('item:', item)
+
 
     return(
 

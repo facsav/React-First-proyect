@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export function ItemCount (props){
-    const {stock} = props
+    const {stock, onAdd} = props
     const [contador, setContador] = useState(0)
 
     function sumaNum (){
@@ -21,20 +21,7 @@ export function ItemCount (props){
         }
     }
 
-    function agregarProd(){
-        if (contador  === 0)
-        {
 
-        }
-
-        else if (contador === 1) {
-            alert(`Se agregó ${contador} producto al carrito`)
-        }
-        else{
-            alert(`Se agregaron ${contador} productos al carrito`)
-        }
-
-    }
 
 
 
@@ -44,7 +31,7 @@ export function ItemCount (props){
         <button className="btn btn-primary" onClick={sumaNum}>+</button>
         <button className="btn btn-primary" onClick={restaNum}>-</button>
         <hr></hr>
-        <button className="btn btn-primary" onClick={agregarProd}  > Agragar al carrito </button>
+        <button className="btn btn-primary" onClick={()=>onAdd(contador)}  > Agragar al carrito </button>
     </div>
     )
 }
