@@ -1,9 +1,16 @@
 import { useState } from "react"
 
 export function ItemCount (props){
+
+
+
     const {stock, onAdd} = props
     const [contador, setContador] = useState(0)
 
+
+
+
+    // ------------------FUNCIONES + y - -------------------------------------------
     function sumaNum (){
         if ( contador < stock){
             setContador (contador + 1)
@@ -31,7 +38,7 @@ export function ItemCount (props){
         <button className="btn btn-primary" onClick={sumaNum}>+</button>
         <button className="btn btn-primary" onClick={restaNum}>-</button>
         <hr></hr>
-        <button className="btn btn-primary" onClick={()=>onAdd(contador)}  > Agragar al carrito </button>
+        <button className="btn btn-primary" onClick={()=>onAdd(contador) }  > Agragar al carrito </button>
     </div>
     )
 }

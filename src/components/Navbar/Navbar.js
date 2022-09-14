@@ -20,9 +20,6 @@ const Navbar = () => {
                          <Link className="nav-link" id="estiloNav" to='/'>Inicio</Link>
                     </li> */}
                     
-                    {/* <li class="nav-item">
-                         <Link className="nav-link" id="estiloNav" to='/detail'>Detalle</Link>
-                    </li> */}
 
                         
                     <li class="nav-item dropdown">
@@ -43,6 +40,10 @@ const Navbar = () => {
                     <li class="nav-item ">
                         <Cart></Cart>
                     </li>
+                    <li class="nav-item">
+                         <Link className="nav-link" id="estiloNav" to='/cart'>Carrito</Link>
+                    </li>
+
                 </ul>
             </div>
         </nav>
