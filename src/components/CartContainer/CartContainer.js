@@ -6,20 +6,20 @@ import { CartItem } from "../CartItem/CartItem"
 
 
 export function CartContainer(){
-    const{cartList} = useContext(CartContext)
+    const{cartList, removeAll} = useContext(CartContext)
 
     {console.log(cartList)}
 
     return(
         <div>
-            <p>
-                A
-            </p>
+            <button onClick={removeAll} className="btn btn-primary" >Borrar todos los productos</button>
             {
                 cartList.map (prod =>(
                     <CartItem infoDetalle={prod} ></CartItem>
                 ))
+                
             }
+            
         </div>
     )
 }

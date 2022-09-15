@@ -112,7 +112,7 @@ export const obtenerLista = () =>{
         setTimeout(() => {
             resolve( arrayItems )
             reject(err => console.log (err))
-        }, 2000);
+        }, 1000);
 
 
     })
