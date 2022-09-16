@@ -11,6 +11,8 @@ export function ItemDetail ({infoDetalle}){
 
     const {addProduct} = useContext(CartContext)
 
+
+
     const onAdd = (count)=>{
         const newProduct = {...infoDetalle, quantity:count}
         addProduct(newProduct)

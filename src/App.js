@@ -12,6 +12,7 @@ import { Main } from './components/Main/Main';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
 import { CartContainer } from './components/CartContainer/CartContainer';
+import {Cart} from './components/Cart/Cart'
 
 
 

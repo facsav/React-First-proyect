@@ -1,4 +1,4 @@
-import { Children, createContext, useState } from "react";
+import {createContext, useState } from "react";
 
 export const CartContext = createContext()
 
@@ -6,46 +6,34 @@ export const CartProvider = ({children}) => {
 
     const [cartList , setProductCartList] = useState([])
 
-    // const addProduct = (product) =>{
-    //     const newList = [...cartList]
-    //     newList.push(product)
-    //     setProductCartList(newList)
-    //     console.log(cartList)
-    // }
-    
-    // const addProduct = (product, qty) =>{
-    //     const newProduct = {...product, cartList:qty}
-    //     const newList = [...cartList]
-    //     newList.push(product) 
-    //     setProductCartList(newList)
-    //     console.log(cartList)
-    // }
-
     const isInCart = (id)=>{
-        const existenciaElemento = cartList.some ((elemento)=> elemento.id === id)
-        return existenciaElemento
+        const prodAdded = cartList.findIndex(product =>product.id === id);
+        if(prodAdded>=0){
+            return {exists: true, index:prodAdded}
+        } else{
+            return {exists: false, index:undefined}
+        }
     }
 
-    const addProduct = (product, qty) =>{
-        const newProduct = [...cartList]
-        if(isInCart(product.id)){
-            const prodAddAgain = cartList.findIndex(prod => prod.id ===product.id)
-            newProduct[prodAddAgain].quantity = newProduct[prodAddAgain].quantity + qty
-            setProductCartList(newProduct)
-            
-        }
-        else{
-            const newProduct = {...product, cartList:qty}
-            const newList = [...cartList]
-            newList.push(newProduct) 
+
+    const addProduct = (product)=>{
+        const inCartObj = isInCart(product.id);
+        if(inCartObj.exists){
+            const productListCopy = [...cartList];
+            productListCopy[inCartObj.index].quantity = productListCopy[inCartObj.index].quantity + product.quantity;
+            setProductCartList(productListCopy)
+        } else{
+            const newList = [...cartList,product];
             setProductCartList(newList)
-            console.log(cartList)
         }
     }
+
+
+
 
     const removeProduct =(idProduct)=>{
         const copiaArray = [...cartList]
-        const newArray = copiaArray.filter(del=>del.id !== idProduct)
+        const newArray = copiaArray.filter(remove=>remove.id !== idProduct)
         setProductCartList(newArray)
     }
 
@@ -53,11 +41,18 @@ export const CartProvider = ({children}) => {
         setProductCartList([])
     }
 
+    const numberCart = cartList.length
+    
+
     return(
-        <CartContext.Provider value={{cartList, addProduct, removeProduct, removeAll}}>
+        <CartContext.Provider value={{cartList, addProduct, removeProduct, removeAll, numberCart}}>
         
             {children}
         
         </CartContext.Provider>
     )
 }
+
+
+
+
