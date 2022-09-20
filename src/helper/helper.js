@@ -58,7 +58,7 @@ export const arrayItems = [
         descLarga:'Tapa a rosca, rejilla anti grumos. Ideal para preparar tus licuados de proteínas, creatinas, aminoácidos y bcaa en polvo. Originales y coleccionables.',
         precio:'1700$',
         foto: imagenes.shakerBsn,
-        stock:5,
+        stock:2,
         tipo:'otros'     
     },
     {
