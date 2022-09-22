@@ -6,6 +6,10 @@ import { Link } from "react-router-dom"
 export function Cart (props){
     const {numero} = props
     // const{cartShow} = useContext(CartContext)
+
+
+    // props a incluir: info de quien compro, 
+
     return(
 
         <div >
