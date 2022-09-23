@@ -7,24 +7,23 @@ export const CartProvider = ({children}) => {
     const [cartList , setProductCartList] = useState([])
 
     const isInCart = (id)=>{
-        const prodAdded = cartList.findIndex(product =>product.id === id);
-        if(prodAdded>=0){
-            return {exists: true, index:prodAdded}
-        } else{
-            return {exists: false, index:undefined}
-        }
+        const elementExists = cartList.some((elemento)=>elemento.id === id);
+        return elementExists;
     }
 
 
-    const addProduct = (product)=>{
-        const inCartObj = isInCart(product.id);
-        if(inCartObj.exists){
-            const productListCopy = [...cartList];
-            productListCopy[inCartObj.index].quantity = productListCopy[inCartObj.index].quantity + product.quantity;
-            setProductCartList(productListCopy)
-        } else{
-            const newList = [...cartList,product];
+    const addProduct = (product, contador)=>{
+        const newList = [...cartList];
+        if(isInCart(product.id)){
+            const productIndex = cartList.findIndex(element=>element.id===product.id);
+            newList[productIndex].quantity = newList[productIndex].quantity + contador;
+            newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
             setProductCartList(newList)
+        } else{
+            const newProduct={...product, quantity:contador, totalPrice: contador*product.price}
+            const newList = [...cartList];
+            newList.push(newProduct);
+            setProductCartList(newList);
         }
     }
 
@@ -41,11 +40,17 @@ export const CartProvider = ({children}) => {
         setProductCartList([])
     }
 
+
+    const getTotalPrice = ()=>{
+        const totalPriceProducts = cartList.reduce((acc,item)=>acc + item.totalPrice,0);
+        return totalPriceProducts;
+    }
+
     const numberCart = cartList.length
     
 
     return(
-        <CartContext.Provider value={{cartList, addProduct, removeProduct, removeAll, numberCart}}>
+        <CartContext.Provider value={{cartList, addProduct, removeProduct, removeAll, getTotalPrice, numberCart}}>
         
             {children}
         
