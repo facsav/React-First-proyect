@@ -15,8 +15,9 @@ export function ItemDetail ({infoDetalle}){
 
     const onAdd = (count)=>{
         const newProduct = {...infoDetalle, quantity:count}
-        addProduct(newProduct)
+        addProduct(newProduct, count)
         alert('Se agregó el producto correctamente')
+        
 
     }
 

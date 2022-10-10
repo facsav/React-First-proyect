@@ -17,10 +17,10 @@ export const CartProvider = ({children}) => {
         if(isInCart(product.id)){
             const productIndex = cartList.findIndex(element=>element.id===product.id);
             newList[productIndex].quantity = newList[productIndex].quantity + contador;
-            newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
+            newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].precio;
             setProductCartList(newList)
         } else{
-            const newProduct={...product, quantity:contador, totalPrice: contador*product.price}
+            const newProduct={...product, quantity:contador, totalPrice: contador*product.precio}
             const newList = [...cartList];
             newList.push(newProduct);
             setProductCartList(newList);
@@ -46,7 +46,7 @@ export const CartProvider = ({children}) => {
         return totalPriceProducts;
     }
 
-    const numberCart = cartList.length
+    const numberCart = cartList.length 
     
 
     return(

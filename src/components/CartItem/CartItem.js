@@ -18,7 +18,6 @@ export function CartItem ({infoDetalle}) {
                         <h5 class="card-title">{infoDetalle.titulo}</h5>
                         <p class="card-text">{`Cantidad: ${infoDetalle.quantity}`}</p>
                         <p>{`precio unitario: ${infoDetalle.precio}`}</p>
-                        <p>{`Cantidad: ${infoDetalle.quantity}`}</p>
                         <p>Precio total: {infoDetalle.totalPrice}</p>
                         <button onClick={()=>removeProduct(infoDetalle.id)} className="btn btn-primary">Eliminar del Carrito</button>
                     </div>
