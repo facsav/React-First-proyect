@@ -11,7 +11,7 @@ export function Items ({infoTarjeta}){
                 <div class="card-body">
                     <h5 class="card-title">{infoTarjeta.titulo}</h5>
                     <p class="card-text">{infoTarjeta.descripcion}</p>
-                    {/* <ItemCount stock = {infoTarjeta.stock} ></ItemCount> */}
+
 
                 </div>
             

@@ -31,15 +31,6 @@ export function CartContainer(){
       alert("Orden Enviada!")
     }
 
-    const updateOrder = ()=>{
-        const queryRef = doc(dataBase,"items","QPecYuDxkskZBr3uoVjI");
-        updateDoc(queryRef, {
-          categoria: "zapatos",
-          pictureUrl: "https://firebasestorage.googleapis.com/v0/b/react-41590.appspot.com/o/zapato-hombre.jpg?alt=media&token=36321466-cb68-445e-858a-8772114f12e6",
-          price:90,
-          title:"zapatos hombre"
-        }).then(()=>console.log("producto actualizado"))
-    }
     
 
 
@@ -67,7 +58,6 @@ export function CartContainer(){
               <input className="form-control" type="email" placeholder='email'/>
               <button className="btn btn-primary" type='submit'>enviar orden</button>
             </form>
-            {/* <button className="btn btn-primary" onClick={updateOrder}>actualizar</button> */}
           </>
            :
            <>

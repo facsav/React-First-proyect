@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export function ItemCount (props){
 
@@ -28,18 +29,22 @@ export function ItemCount (props){
         }
     }
 
-
-
+    const [condition,setCondition] = useState(false)
+    const Componente = ({condition}) =>{
+        return(
+            <div>
+            <p> Productos seleccionados {contador} </p>
+            <button className="btn btn-primary" onClick={restaNum}>-</button>
+            <button className="btn btn-primary" onClick={sumaNum}>+</button>
+            <hr></hr>
+            <button className={contador === 0 ? "btn btn-primary disabled" : "btn btn-primary "} onClick={()=> {onAdd(contador); setCondition (true);}}   > Agragar al carrito  </button>
+            <Link className="btn btn-primary" style={{display: condition ? '' : "none"}} id="" to='/cart'>Finalizar Compra</Link>
+        </div>
+        )
+    }
 
 
     return(
-    <div>
-        <p> Productos seleccionados {contador} </p>
-        <button className="btn btn-primary" onClick={restaNum}>-</button>
-        <button className="btn btn-primary" onClick={sumaNum}>+</button>
-        <hr></hr>
-        <button className="btn btn-primary" onClick={()=>onAdd(contador) }  > Agragar al carrito </button>
-        <button className="btn btn-primary" style={{display:'none'}}  > Finalizar Compra </button>
-    </div>
+        <Componente condition={condition} ></Componente>
     )
 }

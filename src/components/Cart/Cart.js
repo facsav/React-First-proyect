@@ -1,18 +1,13 @@
-// import { useContext } from "react"
-// import { CartContext } from "../../context/CartContext"
 
 import { Link } from "react-router-dom"
 
 export function Cart (props){
     const {numero} = props
-    // const{cartShow} = useContext(CartContext)
 
-
-    // props a incluir: info de quien compro, 
 
     return(
 
-        <div >
+        <div style={{display:'flex', flexDirecction:'row'}} >
             <Link to='/cart' style={{color:'black'}}>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">

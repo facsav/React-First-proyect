@@ -40,13 +40,12 @@ const Navbar = () => {
                         <Link className="nav-link" id="estiloNav" to='/catalogo/otros'>Ver otros</Link>
                     </div>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item " >
+                        <Link className="nav-link" id="estiloNav" to='/cart'>Carrito</Link>
+                    </li>
+                    <li class="nav-item  ">
                         <Cart numero={numberCart}></Cart>
                     </li>
-                    <li class="nav-item">
-                         <Link className="nav-link" id="estiloNav" to='/cart'>Carrito</Link>
-                    </li>
-
                 </ul>
             </div>
         </nav>
@@ -54,3 +53,4 @@ const Navbar = () => {
 }
 
 export default Navbar 
+

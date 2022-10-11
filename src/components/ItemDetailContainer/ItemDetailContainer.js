@@ -15,12 +15,6 @@ export function ItemDetailContainer (){
 
     const [item, setItem] = useState({});
 
-    // const getItem = (id)=>{
-    //     return new Promise((resolve, reject)=>{
-    //         const product = arrayItems.find(item=>item.id === parseInt(id));
-    //         resolve(product)
-    //     })
-    // }
 
     useEffect(()=>{
         const queryRef = doc(dataBase, "items", id)
@@ -31,12 +25,6 @@ export function ItemDetailContainer (){
             }
             setItem(newDoc)
         })
-        // const getProducto = async()=>{
-        //     const producto = await getItem(id);
-
-        //     setItem(producto);
-        // }
-        // getProducto();
     },[id])
 
 
